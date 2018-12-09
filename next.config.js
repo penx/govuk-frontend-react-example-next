@@ -1,20 +1,13 @@
 const withSass = require('@zeit/next-sass')
+const withTM = require('next-plugin-transpile-modules');
 
-// if (typeof require !== 'undefined') {
-//   require.extensions['.scss'] = (file) => {}
-// }
-
-module.exports = withSass({
-  webpack: config => {
-    // Fixes npm packages that depend on `fs` module
+module.exports = withTM(withSass({
+  transpileModules: ['govuk-frontend-react', 'govuk-frontend'],
+  webpack: (config, options) => {
     config.node = {
       fs: 'empty'
     }
-
     return config
   },
   cssModules: true,
-  // sassLoaderOptions: {
-  //   includePaths: ["node_modules"]
-  // }
-});
+}));
