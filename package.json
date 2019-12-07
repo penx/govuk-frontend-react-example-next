@@ -8,7 +8,7 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "govuk-frontend-react": "^0.0.12",
-    "next": "^7.0.2",
+    "next": "^7.0.3",
     "next-plugin-transpile-modules": "^1.0.0",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
